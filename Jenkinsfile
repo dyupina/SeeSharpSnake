@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-//                 bat 'makewin.cmd' 
+//                 bat 'makewin.cmd' //
               bat 'dotnet publish -r win-x64 -c Release /p:PublishTrimmed=true'
             }
         }
