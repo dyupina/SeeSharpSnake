@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                powershell 'dotnet publish -r win-x64 -c Release' 
+                // powershell 'dotnet publish -r win-x64 -c Release' 
+                bat 'build.bat'
             }
         }
 
