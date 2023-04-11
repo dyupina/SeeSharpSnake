@@ -1,1 +1,1 @@
-C:\Program Files\dotnet\dotnet.exe publish -r win-x64 -c Release
+"C:\Program Files\dotnet\dotnet.exe" publish -r win-x64 -c Release
